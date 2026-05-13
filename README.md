@@ -1,46 +1,81 @@
-# Express-React Assignment
-## DEADLINE: 21st April EOD
+# MoviePuzzler
 
----
+A web app where you guess movies from brutally honest descriptions of their plots.
 
-## Option 1: The Movie Puzzler
-**The Concept:** A mini-game where users are presented with extremely literal (and often cynical) descriptions of movies and must guess the correct title.
-> *Example:* "A billionaire beats up the mentally ill while wearing a rubber suit" → **The Dark Knight**
+## What it does
 
-### Required Features
-* **Puzzle Fetching:** * API to fetch a random puzzle.
-    * Ability to filter and fetch puzzles based on difficulty levels (e.g., Easy, Medium, Hard).
-* **User System:** * Full user authentication (Signup/Login).
-    * Persistence: Track which puzzles a user has already solved to show their progress.
-* **Frontend Logic:** * A **Hint Button** that remains disabled/hidden until a user has made a certain number of failed attempts.
+You get shown a one line description of a movie written as literally as possible. You type in your answer and see if you are right. There are three difficulty levels. After three wrong attempts a hint button shows up.
 
-### Brownie Points
-* **Leaderboard/Analytics:** A page displaying user rankings based on the total number of puzzles solved.
+## Tech Stack
 
----
+- React for the frontend
+- Node and Express for the backend
+- MongoDB for the database
+- JWT for authentication
 
-## Option 2: The "Wall of Shame"
-**The Concept:** A single-page, anonymous "shame wall" where developers can post snippets of code they are embarrassed by or that went horribly wrong.
+## Project Structure
 
-### Required Features
-* **Global Wall:** A shared space where all users see the same snippets in real-time or upon page refresh.
-* **Community Interaction:** Users can click on a specific snippet to view/leave remarks or comments.
-* **Anonymity & Ownership:** * No formal account system is required (keep it anonymous).
-    * **Logic:** Only the person who posted a specific comment should be able to delete it.
-* **Frontend UI:** * A "single large screen" layout where code snippets appear as distinct, interactable components (like cards or sticky notes).
+```
+MoviePuzzler/
+  client/        React frontend
+  server/        Express backend
+```
 
-### Brownie Points
-* **Profile History:** A local profile screen where a user can view a history of all snippets and comments they have posted from their browser.
+## How to run it
 
----
+You need Node.js and a MongoDB Atlas account before starting.
 
-## Tech Stack Requirements
-* **Frontend:** React.js
-* **Backend:** Express.js
-* **Database:** Your choice (MongoDB, PostgreSQL, or even a local JSON file for persistence).
+**Set up the server**
 
-## Submission Guidelines
-1.  Initialize a Git repository.
-2.  Ensure your code is well-commented and the folder structure is clean (e.g., `/client` and `/server`).
-3.  Include a brief `README` on how to install dependencies and run the project locally.
-4. Make a pull request to this repository.
+```
+cd server
+npm install
+```
+
+Create a .env file inside the server folder with these two values:
+
+```
+MONGO_URI=your mongodb connection string here
+JWT_SECRET=any random string here
+```
+
+Seed the database with puzzles:
+
+```
+node puzzles.js
+```
+
+Start the server:
+
+```
+npm start
+```
+
+**Set up the client**
+
+```
+cd client
+npm install
+npm run dev
+```
+
+The app will be running at http://localhost:3000
+
+## API Routes
+
+**Auth**
+
+- POST /api/auth/signup - create a new account
+- POST /api/auth/login - log in to an existing account
+
+**Puzzles**
+
+- GET /api/puzzles/random - get a random puzzle
+- GET /api/puzzles/random?difficulty=easy - get a puzzle filtered by difficulty (easy, medium, hard)
+
+## Features
+
+- Sign up and log in
+- Get random movie puzzles
+- Filter puzzles by difficulty
+- Hint system that unlocks after 3 wrong attempts

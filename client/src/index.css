@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f4f2ee;
+  color: #1c1c1e;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: #1a3a6b;
+  letter-spacing: -0.3px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 8px 20px;
+  background: #1a3a6b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover {
+  background: #14305a;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  background: transparent;
+  color: #555;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-secondary:hover {
+  background: #f0ede8;
+  color: #1c1c1e;
+}
+
+
+.home-page {
+  min-height: 100vh;
+  background: #f4f2ee;
+}
+
+.hero {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 96px 32px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1c1c1e;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: #1a3a6b;
+}
+
+.hero p {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 28px;
+}
+
+
+/* --- AUTH PAGES --- */
+.auth-page {
+  min-height: 100vh;
+  background: #f4f2ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid #e8e4dc;
+  border-radius: 12px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.auth-logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a3a6b;
+  letter-spacing: -0.2px;
+  margin-bottom: 28px;
+}
+
+.auth-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1c1c1e;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.auth-card .sub {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 28px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  background: #fafafa;
+  color: #1c1c1e;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.field input::placeholder {
+  color: #bbb;
+}
+
+.field input:focus {
+  border-color: #1a3a6b;
+  background: #fff;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 11px;
+  background: #1a3a6b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.auth-submit:hover {
+  background: #14305a;
+}
+
+.auth-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+.auth-footer button {
+  background: none;
+  border: none;
+  color: #1a3a6b;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.auth-footer button:hover {
+  text-decoration: underline;
+}
+
+.error-box {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  color: #c0392b;
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.back-btn:hover {
+  color: #555;
+}
