@@ -13,7 +13,7 @@ async function signup(req, res){
     const user = await User.create({ username, email, password: hashed })
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' })
 
-    res.status(201).json({ token, username: user.username })
+    res.status(201).json({ token, username: user.username, _id: user._id })
   } catch (err) {
     res.status(500).json({ message: 'Server error' })
   }
@@ -30,7 +30,7 @@ async function login(req, res){
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' })
 
-    res.status(200).json({ token, username: user.username })
+    res.status(201).json({ token, username: user.username, _id: user._id })
   } catch (err) {
     res.status(500).json({ message: 'Server error' })
   }

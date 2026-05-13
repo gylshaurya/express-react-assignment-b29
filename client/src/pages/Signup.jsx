@@ -20,6 +20,7 @@ export default function Signup() {
     if (res.ok) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.username);
+      localStorage.setItem("userId", data._id)
       navigate("/");
     }
     setLoading(false);

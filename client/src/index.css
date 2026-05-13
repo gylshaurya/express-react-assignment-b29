@@ -29,15 +29,19 @@ body {
 
 .nav-logo {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
   color: #1a3a6b;
-  letter-spacing: -0.3px;
 }
 
 .nav-buttons {
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.nav-user {
+  font-size: 13px;
+  color: #555;
 }
 
 .btn-primary {
@@ -50,7 +54,6 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s;
 }
 
 .btn-primary:hover {
@@ -65,36 +68,32 @@ body {
   border-radius: 6px;
   font-size: 13px;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
 }
 
 .btn-secondary:hover {
   background: #f0ede8;
-  color: #1c1c1e;
 }
-
 
 .home-page {
   min-height: 100vh;
-  background: #f4f2ee;
 }
 
 .hero {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 96px 32px 0;
+  max-width: 560px;
+  margin: 80px auto;
+  padding: 0 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
-  color: #1c1c1e;
   letter-spacing: -0.5px;
-  margin-bottom: 16px;
 }
 
 .hero h1 span {
@@ -105,15 +104,10 @@ body {
   font-size: 15px;
   color: #777;
   line-height: 1.7;
-  max-width: 440px;
-  margin: 0 auto 28px;
 }
 
-
-/* --- AUTH PAGES --- */
 .auth-page {
   min-height: 100vh;
-  background: #f4f2ee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,26 +124,16 @@ body {
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 
-.auth-logo {
-  font-weight: 700;
-  font-size: 14px;
-  color: #1a3a6b;
-  letter-spacing: -0.2px;
-  margin-bottom: 28px;
-}
-
 .auth-card h2 {
   font-size: 22px;
   font-weight: 700;
-  color: #1c1c1e;
-  letter-spacing: -0.3px;
   margin-bottom: 4px;
 }
 
 .auth-card .sub {
   font-size: 13px;
   color: #999;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .field {
@@ -174,11 +158,6 @@ body {
   outline: none;
   background: #fafafa;
   color: #1c1c1e;
-  transition: border-color 0.15s, background 0.15s;
-}
-
-.field input::placeholder {
-  color: #bbb;
 }
 
 .field input:focus {
@@ -198,7 +177,6 @@ body {
   font-weight: 600;
   cursor: pointer;
   margin-top: 8px;
-  transition: background 0.15s;
 }
 
 .auth-submit:hover {
@@ -224,35 +202,109 @@ body {
   cursor: pointer;
   font-size: 13px;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
 }
 
-.auth-footer button:hover {
-  text-decoration: underline;
+.game-container {
+  max-width: 560px;
+  margin: 60px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.error-box {
-  background: #fff5f5;
-  border: 1px solid #fecaca;
-  color: #c0392b;
-  font-size: 12px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  margin-bottom: 16px;
+.difficulty-row {
+  display: flex;
+  gap: 8px;
 }
 
-.back-btn {
-  background: none;
-  border: none;
+.diff-btn {
+  padding: 6px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: transparent;
   font-size: 13px;
   font-family: 'DM Sans', sans-serif;
-  color: #999;
   cursor: pointer;
-  padding: 0;
-  margin-bottom: 20px;
-  display: block;
+  color: #555;
 }
 
-.back-btn:hover {
-  color: #555;
+.diff-btn-active {
+  background: #1a3a6b;
+  color: #fff;
+  border-color: #1a3a6b;
+}
+
+.puzzle-card {
+  background: #fff;
+  border: 1px solid #e8e4dc;
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.label {
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.puzzle-text {
+  font-size: 15px;
+  color: #333;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.guess-row {
+  display: flex;
+  gap: 10px;
+}
+
+.guess-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  background: #fafafa;
+  color: #1c1c1e;
+}
+
+.guess-input:focus {
+  border-color: #1a3a6b;
+  background: #fff;
+}
+
+.result-correct {
+  font-size: 14px;
+  color: #1a7a3a;
+  background: #f0fff4;
+  border: 1px solid #b2f0c8;
+  padding: 14px 16px;
+  border-radius: 6px;
+}
+
+.result-wrong {
+  font-size: 14px;
+  color: #c0392b;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.hint-text {
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+}
+
+.solved-count {
+  font-size: 13px;
+  color: #777;
 }

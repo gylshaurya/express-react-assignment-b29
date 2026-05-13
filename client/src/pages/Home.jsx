@@ -7,7 +7,8 @@ export default function Home() {
   const handleLogout = () => {
     localStorage.removeItem("token")
     localStorage.removeItem("username")
-    navigate("/login")
+    localStorage.removeItem("userId");
+    navigate("/")
   }
 
 
@@ -32,12 +33,12 @@ export default function Home() {
       </nav>
 
       <div className="hero">
-        <h1>Guess the movie from a <span>literally honest</span> description</h1>
-        <p>A billionaire beats up the mentally ill while wearing a rubber suit → The Dark Knight</p>
-        {!username && ( <button className="btn-primary" onClick={() => navigate("/signup")}>Start Playing</button>)}
-        {username && ( <button className="btn-primary" onClick={() => navigate("/movie-puzzler")}>Start Playing</button>)}
-
-
+        <h1>Guess the movie from a <span>brutally honest</span> description</h1>
+        <p>We describe popular films as literally as possible. Figure out which movie it is.</p>
+        {username
+          ? <button className="btn-primary" onClick={() => navigate("/movie-puzzler")}>Start Playing</button>
+          : <button className="btn-primary" onClick={() => navigate("/signup")}>Sign up to Play</button>
+        }
       </div>
     </div>
   );
