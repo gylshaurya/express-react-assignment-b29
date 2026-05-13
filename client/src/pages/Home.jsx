@@ -35,6 +35,7 @@ export default function Home() {
         <h1>Guess the movie from a <span>literally honest</span> description</h1>
         <p>A billionaire beats up the mentally ill while wearing a rubber suit → The Dark Knight</p>
         {!username && ( <button className="btn-primary" onClick={() => navigate("/signup")}>Start Playing</button>)}
+        {username && ( <button className="btn-primary" onClick={() => navigate("/movie-puzzler")}>Start Playing</button>)}
 
 
       </div>

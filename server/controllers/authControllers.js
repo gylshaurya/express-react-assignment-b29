@@ -6,7 +6,6 @@ async function signup(req, res){
     const { username, email, password } = req.body
 
   try {
-
     const existing = await User.findOne({ email })
     if (existing) return res.status(400).json({ message: 'Email already in use' })
 
@@ -23,7 +22,6 @@ async function login(req, res){
     const { email, password } = req.body
 
   try {
-
     const user = await User.findOne({ email })
     if (!user) return res.status(400).json({ message: 'Invalid credentials' })
 
