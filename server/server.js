@@ -15,7 +15,7 @@ const authRouter = require('./routes/authRoutes')
 app.use('/api/auth', authRouter)
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB Connected'))
-  .catch((err) => console.log('MongoDB Connection Error', err))
+.then(() => console.log('MongoDB Connected'))
+.catch((err) => console.log('MongoDB Connection Error', err))
 
 app.listen(3000, () => console.log('Server running on port 3000'))

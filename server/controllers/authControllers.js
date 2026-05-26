@@ -6,8 +6,11 @@ async function signup(req, res){
     const { username, email, password } = req.body
 
   try {
-    const existing = await User.findOne({ email })
+    let existing = await User.findOne({ email })
     if (existing) return res.status(400).json({ message: 'Email already in use' })
+
+    existing = await User.findOne({ username })
+    if (existing) return res.status(400).json({ message: 'Username already in use' })
 
     const hashed = await bcrypt.hash(password, 10)
     const user = await User.create({ username, email, password: hashed })

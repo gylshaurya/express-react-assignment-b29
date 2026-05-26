@@ -81,15 +81,22 @@ export default function MoviePuzzler() {
       <p className="solved-count">Solved: {solvedCount} / 30</p>
 
         <div className="difficulty-row">
-          {["", "easy", "medium", "hard"].map((d) => (
             <button
-              key={d}
-              className={`diff-btn ${difficulty === d ? "diff-btn-active" : ""}`}
-              onClick={() => handleDifficulty(d)}
-            >
-              {d === "" ? "All" : d.charAt(0).toUpperCase() + d.slice(1)}
-            </button>
-          ))}
+              className={`diff-btn ${difficulty === "" ? "diff-btn-active" : ""}`}
+              onClick={() => handleDifficulty("")}
+            >All</button>
+            <button
+              className={`diff-btn ${difficulty === "easy" ? "diff-btn-active" : ""}`}
+              onClick={() => handleDifficulty("easy")}
+            >Easy</button>
+            <button
+              className={`diff-btn ${difficulty === "medium" ? "diff-btn-active" : ""}`}
+              onClick={() => handleDifficulty("medium")}
+            >Medium</button>
+            <button
+              className={`diff-btn ${difficulty === "hard" ? "diff-btn-active" : ""}`}
+              onClick={() => handleDifficulty("hard")}
+            >Hard</button>
         </div>
 
         <div className="puzzle-card">
